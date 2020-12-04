@@ -127,8 +127,8 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 public class GHConnect {
-	private static final String personalToken = "Insert your personal token";//
-	private static final Logger LOG = Logger.getGlobal();//로그 객체
+	private static final String personalToken = "Insert your personal token";
+	private static final Logger LOG = Logger.getGlobal();
 	private GitHub github;
 
 	public GHConnect() {
@@ -149,7 +149,6 @@ public class GHConnect {
 		return LOG;
 	}
 }
-
 ```
 <br>
 
@@ -191,19 +190,19 @@ import org.kohsuke.github.GitHub;
 import livestudy.mission4.ghcon.GHConnect;
 
 public class Dao {
-	private Logger LOG;
+	private Logger LOG; 
 	private GitHub github;
 	private GHRepository repo;
-	private Map<String, Integer> participants;
-	private int total;
+	private Map<String, Integer> participants; // userid와 참여횟수
+	private int total; 						   // 이슈 총 개수
 
 	public Dao() throws IOException {
 		GHConnect con = new GHConnect();
-		this.github = con.getConnection(); // 깃허브 객체 가져오기
-		this.LOG = con.getLog(); // 로그 객체 가져오기
+		this.github = con.getConnection(); 	   // GHConnect로부터 깃허브 객체 가져오기
+		this.LOG = con.getLog(); 			   // GHConnect로부터 로그 객체 가져오기
 		this.participants = new HashMap<String, Integer>();
 	}
-
+	
 	public Logger getLog() {
 		return this.LOG;
 	}
@@ -226,30 +225,33 @@ public class Dao {
 		}
 	}
 
+	// 세팅된 repository의 유저별 출석정보 세팅
 	public void setAttendance() throws IOException {
-		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL);
-		Set<String> nameList = new HashSet<String>();
-		this.total = allTheIssues.size();
-
-		for (GHIssue issueForAWeek : allTheIssues) {
-			for (GHIssueComment comment : issueForAWeek.getComments()) {
-				nameList.add(comment.getUser().getLogin());
+		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL);  	// 세팅된 리포지토리의 전체 issue
+		Set<String> nameList = new HashSet<String>(); 				    	// 하나의 issue에 코멘트를 남긴 user id를 담기 위한 임시 set (중복제거 위함)
+		this.total = allTheIssues.size(); 							    	// 출석율 계산을 위한 이슈 총 개수
+		
+		for (GHIssue issueForAWeek : allTheIssues) {				    	// 이슈를 1주자씩 가져와서
+			for (GHIssueComment comment : issueForAWeek.getComments()) {	// 해당 이슈의 전체 코멘트 가져오기
+				nameList.add(comment.getUser().getLogin()); 				// 코멘트의 user id를 namelist(임시 set)에 삽입
 			}
-			insertNames(nameList);
+			insertNames(nameList);											// map<id, count>의 value(출석횟수) 증가시키기
 			nameList.clear();
 		}
 	}
 
+	// 만들어진 임시 set으로 map의 count(출석횟수) 증가시키기
 	public void insertNames(Set<String> nameList) {
 		nameList.forEach((name) -> {
-			if (this.participants.containsKey(name)) {
-				this.participants.put(name, participants.get(name) + 1);
-			} else {
+			if (this.participants.containsKey(name)) {						// 이미 map에 존재하는 id일 경우
+				this.participants.put(name, participants.get(name) + 1);	
+			} else {														// map에 존재하지 않는 id일 경우
 				this.participants.put(name, 1);
 			}
 		});
 	}
 
+	// userid로 출석횟수 검색
 	public Double getAttendenceRateByName(String name) {
 		int count = 1;
 		try {
@@ -260,13 +262,15 @@ public class Dao {
 		}
 		return 0.0;
 	}
-
+	
+	
+	// 모든 참여자의 출석횟수 검색
 	public Map<String, Double> getAllAttendenceRate() {
 		Map<String, Double> allRate = new HashMap<String, Double>();
 		this.participants.forEach((name, count) -> {
 			allRate.put(name, (double) ((count * 100) / this.total));
 		});
-		return sortMapByValue(allRate);
+		return sortMapByValue(allRate); // 출석율을 기준으로 내림차순 정렬
 	}
 
 	public static LinkedHashMap<String, Double> sortMapByValue(Map<String, Double> allRate) {
@@ -302,18 +306,19 @@ public class Service {
 		this.dao.getLog();
 	}
 
+	// 리포지토리 세팅
 	public boolean setRepo(String repo) throws IOException {
 		return this.dao.setRepo(repo);
 	}
 
-	// 한 명
+	// userid로 출석율 검색
 	public void findByName(String name) {
 		Double rate = this.dao.getAttendenceRateByName(name);
 		if (rate == 0) return;
 		System.out.println(name + " : " + String.format("%.2f", rate) + "%" + "\n");
 	}
 
-	// 전체 유저
+	// 모든 유저의 출석율 검색, 출석율 높은 순으로 정렬
 	public void findAll() {
 		Map<String, Double> allRate = this.dao.getAllAttendenceRate();
 		int idx = 1;
@@ -327,7 +332,6 @@ public class Service {
 		System.out.println("\n");
 	}
 }
-
 ```
 <br><br>
 
@@ -399,7 +403,6 @@ public class Menu {
 		} while (flag);
 	}
 }
-
 ```
 
 
