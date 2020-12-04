@@ -133,10 +133,9 @@ public class GHConnect {
 
 	public GHConnect() {
 		try {
-			// 깃허브 객체 생성
-			this.github = new GitHubBuilder().withOAuthToken(personalToken).build();
+		     this.github = new GitHubBuilder().withOAuthToken(personalToken).build();// 깃허브 객체 생성
 		} catch (Exception e) {
-			LOG.info("깃 계정 연결 실패");
+		     LOG.info("깃 계정 연결 실패");
 		}
 		LOG.info("깃 계정 연결 성공");
 	}
@@ -194,12 +193,12 @@ public class Dao {
 	private GitHub github;
 	private GHRepository repo;
 	private Map<String, Integer> participants; // userid와 참여횟수
-	private int total; 						   // 이슈 총 개수
+	private int total; // 이슈 총 개수
 
 	public Dao() throws IOException {
 		GHConnect con = new GHConnect();
-		this.github = con.getConnection(); 	   // GHConnect로부터 깃허브 객체 가져오기
-		this.LOG = con.getLog(); 			   // GHConnect로부터 로그 객체 가져오기
+		this.github = con.getConnection(); // GHConnect로부터 깃허브 객체 가져오기
+		this.LOG = con.getLog(); // GHConnect로부터 로그 객체 가져오기
 		this.participants = new HashMap<String, Integer>();
 	}
 	
@@ -227,15 +226,15 @@ public class Dao {
 
 	// 세팅된 repository의 유저별 출석정보 세팅
 	public void setAttendance() throws IOException {
-		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL);  	// 세팅된 리포지토리의 전체 issue
-		Set<String> nameList = new HashSet<String>(); 				    	// 하나의 issue에 코멘트를 남긴 user id를 담기 위한 임시 set (중복제거 위함)
-		this.total = allTheIssues.size(); 							    	// 출석율 계산을 위한 이슈 총 개수
+		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL); // 세팅된 리포지토리의 전체 issue
+		Set<String> nameList = new HashSet<String>(); 		       // 하나의 issue에 코멘트를 남긴 user id를 담기 위한 임시 set (중복제거 위함)
+		this.total = allTheIssues.size(); 			       // 출석율 계산을 위한 이슈 총 개수
 		
-		for (GHIssue issueForAWeek : allTheIssues) {				    	// 이슈를 1주자씩 가져와서
+		for (GHIssue issueForAWeek : allTheIssues) {				// 이슈를 1주자씩 가져와서
 			for (GHIssueComment comment : issueForAWeek.getComments()) {	// 해당 이슈의 전체 코멘트 가져오기
-				nameList.add(comment.getUser().getLogin()); 				// 코멘트의 user id를 namelist(임시 set)에 삽입
+				nameList.add(comment.getUser().getLogin()); 	        // 코멘트의 user id를 namelist(임시 set)에 삽입
 			}
-			insertNames(nameList);											// map<id, count>의 value(출석횟수) 증가시키기
+			insertNames(nameList);						// map<id, count>의 value(출석횟수) 증가시키기
 			nameList.clear();
 		}
 	}
@@ -243,9 +242,9 @@ public class Dao {
 	// 만들어진 임시 set으로 map의 count(출석횟수) 증가시키기
 	public void insertNames(Set<String> nameList) {
 		nameList.forEach((name) -> {
-			if (this.participants.containsKey(name)) {						// 이미 map에 존재하는 id일 경우
+			if (this.participants.containsKey(name)) {			// 이미 map에 존재하는 id일 경우
 				this.participants.put(name, participants.get(name) + 1);	
-			} else {														// map에 존재하지 않는 id일 경우
+			} else {						        // map에 존재하지 않는 id일 경우
 				this.participants.put(name, 1);
 			}
 		});
