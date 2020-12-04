@@ -1,6 +1,3 @@
-# livestudy-dashboard
-출석률 체크를 위한 대시보드
-
 ## :pushpin: livestudy 대시보드 코드 작성
 
 ### :bulb:  Requirements
