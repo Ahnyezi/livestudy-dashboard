@@ -1,6 +1,5 @@
 package livestudy.mission4.ghcon;
 
-import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.kohsuke.github.GitHub;
@@ -12,14 +11,13 @@ public class GHConnect {
 	private GitHub github;
 
 	public GHConnect() {
-		try {
+		try {// 깃허브 객체 생성
 			this.github = new GitHubBuilder().withOAuthToken(personalToken).build();
+			LOG.info("깃 계정 연결 성공");
 		} catch (Exception e) {
-			LOG.info("깃 계정 연결 실패");
+			LOG.info("깃 계정 연결 실패. 재 연결이 필요합니다.");
 		}
-		LOG.info("깃 계정 연결 성공");
 	}
-
 	public GitHub getConnection() {
 		return github;
 	}

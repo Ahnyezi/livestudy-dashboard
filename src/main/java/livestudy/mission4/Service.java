@@ -13,16 +13,19 @@ public class Service {
 		this.dao.getLog();
 	}
 
+	// 리포지토리 세팅
 	public boolean setRepo(String repo) throws IOException {
 		return this.dao.setRepo(repo);
 	}
 
+	// userid로 출석율 검색
 	public void findByName(String name) {
 		Double rate = this.dao.getAttendenceRateByName(name);
 		if (rate == 0) return;
 		System.out.println(name + " : " + String.format("%.2f", rate) + "%" + "\n");
 	}
 
+	// 모든 유저의 출석율 검색, 출석율 높은 순으로 정렬
 	public void findAll() {
 		Map<String, Double> allRate = this.dao.getAllAttendenceRate();
 		int idx = 1;
