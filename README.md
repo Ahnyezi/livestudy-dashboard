@@ -24,8 +24,8 @@
 1. [GitHub 자바 라이브러리 ?](#1-GitHub-자바-라이브러리)
 
 2. [코드 구성](#2-코드-구성)
-      - 2.0. [결과물](#우선-결과물은-다음과-같다)
-     -  2.1. [GHConnect : 깃허브 객체 생성](#21-GHConnect--깃허브-객체-생성)
+     - 2.0. [결과물](#우선-결과물은-다음과-같다)
+     - 2.1. [GHConnect : 깃허브 객체 생성](#21-GHConnect--깃허브-객체-생성)
      - 2.2. [Dao : 데이터 관리](#22--Dao--데이터-관리)
      - 2.3. [Service : 화면 출력](#23--Service--화면-출력)
      - 2.4. [Menu : 메뉴](#24--Menu--메뉴)
@@ -33,8 +33,10 @@
      
 3. [회고](#3-회고)
       - 3.1 [깃허브 자바 라이브러리를 사용하며](#31-깃허브-자바-라이브러리를-사용하며)
-      - 3.2 [자바 람다식](#32-자바-람다식)
-      - 3.3 [단위 테스트의 필요성](#33-단위-테스트의-필요성)
+         - 3.1.1. [Open API란](#311-Open-API란)
+	 - 3.1.2. [REST API란](#312-REST-API란)
+	 - 3.1.3. [HTTP 프로토콜이란](#313-HTTP-프로토콜이란)
+	 - 3.1.4. [Octokit과 Third Party libraries](#314-octokit과-third-party-libraries)
 
 
 <br>
@@ -702,7 +704,102 @@ public class main {
 
 #### 3.1. 깃허브 자바 라이브러리를 사용하며
 
-#### 3.2. 자바 람다식
+![image](https://user-images.githubusercontent.com/62331803/101240382-5e01c980-3732-11eb-81ac-b3288b57e448.png)
+<br>
 
-#### 3.3. 단위 테스트의 필요성
+이번 과제를 통해 **Open API**를 처음 사용해보았다.<br>
+그동안 막연하게 알고 있던 **네트워크와 API 관련 개념들**을 공부할 수 있는 좋은 기회였다.<br>
+<br>
+
+:point_right: **공부한 내용을 정리해보았다**<br>
+
+#### 3.1.1. Open API란
+   -  **누구나 사용할 수 있도록 공개한 API** 
+   - [Open API](https://ko.wikipedia.org/wiki/%EC%98%A4%ED%94%88_API)를 통해 **특정 기관의 데이터나 기능**을 응용프로그램에서 사용할 수 있다.
+      -  `예`:  **GitHub API**, 기상청 데이터, 카카오 맵 API
+   - Open API를 제공하는 업체는 대부분 [REST API](#312-rest-api란) 형태를 사용한다. 
+<br>
+
+#### 3.1.2. REST API란
+   - **REST API**란, **REST**방식을 기반으로 API를 구현한 것을 말한다.
+   - **REST**방식이란, **네트워크 통신(클라이언트와 서버가 데이터를 전달)방법**의 하나로 [HTTP 프로토콜](#313-HTTP-프로토콜이란)을 기반으로 사용한다.
+      - HTTP 메소드 `POST`, `GET`, `PUT`, `DELETE`를 사용하여, **대상(자원)에 대한  행동(CRUD-생성/조회/수정/삭제)** 을 정의한다.
+   - 주로 `XML`과 `JSON` 형식을 사용한다.
+
+<details>
+<summary> REST 기본 </summary>
+
+**REST 구성**<BR>
+
+![image](https://user-images.githubusercontent.com/62331803/101243445-cad18f80-3743-11eb-996b-6218e566f936.png)
+<br>
+
+**HTTP 메서드**<br>
+
+1. **POST**: 생성 (Create)
+2. **GET**: 조회 (Read)
+3. **DELETE**: 삭제 (Delete)
+4. **PUT**: 갱신 (Update)
+
+
+**예제**<br>
+
+```json
+HTTP POST, http://myweb/users/
+{
+	"users":{
+		"name":"yeji"
+	}
+}
+```
+
+- `Resource(자원)`: **users(사용자)**
+- `Verb(행위)`: **POST (생성)**
+- `Representation(표현)`: **name(이름) : yeji**
+
+**=> 사용자라는 Resource(//myweb/users), 이름이 "yeji"인 Representation으로, 새로운 사용자를 생성 (HTTP POST)**
+
+</details> 
+<br>
+
+#### 3.1.3. HTTP 프로토콜이란
+   -  **웹 브라우저와 웹 서버가 통신할 때 사용하는 일종의 규칙/규약**이다.
+    - 기본적으로 **서버/클라이언트 모델**을 따른다.
+    -   `클라이언트` => `request` => `웹 서버` => `response` => `클라이언트`
+          - `(예)` 사용자가 크롬 브라우저로 `www.naver.com`에 접속하려한다
+          - `request`:  사용자(클라이언트)가 해당 URL을 주소창에 입력한다.
+          - `response`: `request`를 받은 웹 서버가 `www.naver.com`을 띄우기 위한 데이터를 제공한다.
+        
+<br>
+
+#### 3.1.4. Octokit과 Third Party libraries
+
+**Octokit : 깃허브 API Wrapper**<br>
+
+![image](https://user-images.githubusercontent.com/62331803/101243959-e722fb80-3746-11eb-992c-a638ba27d2c4.png)
+<br>
+
+ 사실상 [GitHub API](https://developer.github.com/v3/)를 사용하기 위해서는 API 요청 형식이 어떻게 되고, 그에 따른 응답 형식이 어떻게 되는지를 하나씩 살펴본 뒤, 프로그램 안에서 해당 요청/응답 처리를 직접 해야 한다. <br>
+ 또한 그에 따른 결과들은 Fiddler 혹은 WireShark 같은 도구들을 이용하여 실제 요청 및 응답 내용을 확인해야 한다.<br>
+ 하지만 깃허브는 [Octokit](https://developer.github.com/v3/libraries/)이라 불리는 [API 래퍼](https://help.veracode.com/r/c_about_wrappers)를 직접 개발하고 관리하기 때문에, 이러한 수고를 덜 수 있다.<br>
+<br>
+
+**GitHub API의 Third-party 라이브러리**<br>
+
+**Third-party**란 프로그래밍을 도와주는 `Plug-in(플러그인)`, `Framework(프레임워크)`, `Library(라이브러리)` 등을 말한다.<br>
+이번에 사용한 [GitHub API for Java(org.kohsuke.github)](https://github-api.kohsuke.org/)도 객체지향 형태로 GitHub API를 사용할 수 있게 만든 **서드파티 라이브러리의 일종**이다.
+
+<br><br>
+
+:orange_book: *Reference*<br>
+- [GitHub Developer REST API v3](https://developer.github.com/v3/libraries/)
+- [Octokit을 이용하여 GitHub 앱 만들기](https://blog.aliencube.org/ko/2015/06/22/developing-github-app-with-octokit/)
+- [Using Octokit.net to authenticate your app with GitHub](https://haacked.com/archive/2014/04/24/octokit-oauth/)
+- [What Is a REST API?](https://www.sitepoint.com/developers-rest-api/)
+- [REST란? REST API란? RESTful이란?](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
+- [REST API 설계](#https://www.slideshare.net/Byungwook/rest-api-60505484)
+
+<br><br>
+
+
 
