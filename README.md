@@ -1,17 +1,16 @@
 
-## :pushpin: livestudy 대시보드 코드 작성
+## :pushpin: 과제2 livestudy 대시보드 코드 작성
 
 ### :bulb:  Requirements
 -   깃헙 이슈 1번부터 18번까지 댓글을 순회하며 댓글을 남긴 사용자를 체크 할 것.
 -   참여율을 계산하세요. 총 18회에 중에 몇 %를 참여했는지 소숫점 두자리가지 보여줄 것.
 -   [Github 자바 라이브러리](https://github-api.kohsuke.org/)를 사용하면 편리합니다.
 -   깃헙 API를 익명으로 호출하는데 제한이 있기 때문에 본인의 깃헙 프로젝트에 이슈를 만들고 테스트를 하시면 더 자주 테스트할 수 있습니다.
-<br>
-<br>
+<br><br>
 
 **사실 다른 과제를 할 시간이 없을 거 같아서, 이 과제를 정성들여 하기로 마음 먹었다.. 흫..**<br>
 
- **목표** :exclamation:  <br>
+:bulb:  **목표**  <br>
 - `깃허브 API 이해`
 - `MVC 패턴으로 짜기`
 - `사용자에게 Repository name 받아와서 해당 repo 객체 생성하기`
@@ -19,11 +18,23 @@
    - `아이디별 출석율 검색`
    - `출석랭크 높은 순으로 정렬해서 출력`
 
-<br><br>
+<br>
+
+ :point_right: **목차**   <br>
+1. [GitHub 자바 라이브러리 ?](#1-GitHub-자바-라이브러리)
+
+2. [코드 구성](#2-코드-구성)
+      - 2.0. [결과물](#우선-결과물은-다음과-같다)
+     -  2.1. [GHConnect : 깃허브 객체 생성](#2-1-GHConnect--깃허브-객체-생성)
+     - 2.2. [Dao : 데이터 관리](#2-2--Dao--데이터-관리)
+     - 2.3. [Service : 화면 출력](#2-3--Service--화면-출력)
+     - 2.4. [Menu : 메뉴](#2-4--Menu--메뉴)
+     - 2.5. [main : 메인](#2-5--main--메인)
+
+<br>
 
 
-
-### :question:   GitHub 자바 라이브러리
+### 1. GitHub 자바 라이브러리
 
 **터미널이나 웹을 통해서가 아니라,  프로그램 내에서 깃허브에 접근할 수 있게해주는 라이브러리이다.**<br>
 <br>
@@ -70,8 +81,8 @@
 
 ### 2. 코드 구성
 
-
-**우선 결과물은 다음과 같다!**<br>
+#### 우선 결과물은 다음과 같다!
+<br>
 
 > **깃 계정 연결** <br>
 
@@ -341,7 +352,7 @@
 
 <br><br>
 
-:point_right: **1. GHConnect : 깃허브 객체 생성**<br> 
+#### 2.1. GHConnect : 깃허브 객체 생성
 
 - 깃허브에 접속하기 위한 방법은 여러가지가 있다.<br>
   
@@ -394,7 +405,7 @@ public class GHConnect {
 
 <br><br>
 
-:point_right: **2. Dao : 데이터 관리**<br> 
+#### 2.2. Dao : 데이터 관리
 
 - 사용자로부터 리포지토리 이름을 받아 `GHRepository` 객체를 생성한다.
 - 해당 리포지토리 안에 issue를 순회하며 comment를 남긴 user id를 가져온다.
@@ -523,7 +534,8 @@ public class Dao {
 
 <br><br>
 
-:point_right: **3. Service: 데이터 출력**<br> 
+
+#### 2.3. Service : 화면 출력
 
 ```java
 package livestudy.mission4;
@@ -570,7 +582,7 @@ public class Service {
 ```
 <br><br>
 
-:point_right: **4. Menu: 메뉴**<br> 
+#### 2.4. Menu : 메뉴
 
 ```java
 package livestudy.mission4;
@@ -643,7 +655,7 @@ public class Menu {
 
 <br><br>
 
-:point_right: **5. main: 메인**<br> 
+#### 2.5. main : 메인
 
 ```java
 package livestudy.mission4;
