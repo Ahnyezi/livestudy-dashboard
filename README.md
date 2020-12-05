@@ -34,9 +34,9 @@
 3. [회고](#3-회고)
       - 3.1 [깃허브 자바 라이브러리를 사용하며](#31-깃허브-자바-라이브러리를-사용하며)
          - 3.1.1. [Open API란](#311-Open-API란)
-	 - 3.1.2. [REST API란](#312-REST-API란)
-	 - 3.1.3. [HTTP 프로토콜이란](#313-HTTP-프로토콜이란)
-	 - 3.1.4. [Octokit과 Third Party libraries](#314-octokit과-third-party-libraries)
+	     - 3.1.2. [REST API란](#312-REST-API란)
+	     - 3.1.3. [HTTP 프로토콜이란](#313-HTTP-프로토콜이란) 
+	     - 3.1.4. [Octokit과 Third Party libraries](#314-octokit과-third-party-libraries)
 
 
 <br>
