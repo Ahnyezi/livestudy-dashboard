@@ -97,6 +97,263 @@
 
 ![alt-text](https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard2.gif?raw=true)
 <br>
+
+
+
+> **깃 계정 연결** <br>
+
+- 로그로 연결 성공 여부 띄우기
+
+![image](https://user-images.githubusercontent.com/62331803/101228707-3255f380-36e0-11eb-9771-83a6651f670a.png)
+<br>
+
+> **사용자 리포지토리 입력**<br>
+
+- 로그로 리포지토리 존재 여부 띄우기
+
+![image](https://user-images.githubusercontent.com/62331803/101228773-73e69e80-36e0-11eb-8756-4f56845c978e.png)
+<br>
+
+> **이름으로 출석율 검색**
+
+![image](https://user-images.githubusercontent.com/62331803/101228835-b90ad080-36e0-11eb-8ec9-f36a6db16f5c.png)
+<br>
+
+> **출석 랭킹**<br>
+
+- 출석율이 높은 순으로 정렬해서 출력
+
+![image](https://user-images.githubusercontent.com/62331803/101228858-d2ac1800-36e0-11eb-9992-03b96a14dba5.png)
+<br>
+
+
+<details>
+<summary> :trophy: 전체 랭킹 보기 </summary>
+
+```java
+=============================== Rank ==================================
+
+1.           jymaeng95 -> 22.0%
+2.             jongnan -> 22.0%
+3.             nimkoes -> 22.0%
+4.             roeniss -> 22.0%
+5.            lee-maru -> 22.0%
+6.              kjw217 -> 22.0%
+7.             Lob-dev -> 22.0%
+8.             geneaky -> 22.0%
+9.           KilJaeeun -> 22.0%
+10.            Jul-liet -> 22.0%
+11.            pka0220z -> 22.0%
+12.         SeungWoo-Oh -> 22.0%
+13.     sejongdeveloper -> 22.0%
+14.          Sungjun-HQ -> 22.0%
+15.         sojintjdals -> 16.0%
+16.       HyangKeunChoi -> 16.0%
+17.          twowinsh87 -> 16.0%
+18.           ufonetcom -> 16.0%
+19.           sigriswil -> 16.0%
+20.              catsbi -> 16.0%
+21.           binghe819 -> 16.0%
+22.            seovalue -> 16.0%
+23.             kys4548 -> 16.0%
+24.       KyungJae-Jang -> 16.0%
+25.           kongduboo -> 16.0%
+26.            ahyz0569 -> 16.0%
+27.          loop-study -> 16.0%
+28.            yskkkkkk -> 16.0%
+29.           idiot2222 -> 16.0%
+30.          limyeonsoo -> 16.0%
+31.        Youngerjesus -> 16.0%
+32.            gcha-kim -> 16.0%
+33.           numuduwer -> 16.0%
+34.             pej4303 -> 16.0%
+35.                kyu9 -> 16.0%
+36.      thisisyoungbin -> 16.0%
+37.             Ryureka -> 16.0%
+38.           plzprayme -> 16.0%
+39.              sky7th -> 16.0%
+40.            ejxzhn22 -> 16.0%
+41.           YuSeungmo -> 16.0%
+42.             sskim91 -> 16.0%
+43.              DDOEUN -> 16.0%
+44.             jjone36 -> 16.0%
+45.             CODEMCD -> 16.0%
+46.               sowjd -> 16.0%
+47.        chaechae0322 -> 16.0%
+48.            1031nice -> 16.0%
+49.      JadenKim940105 -> 16.0%
+50.          SooJungDev -> 16.0%
+51.        dacapolife87 -> 16.0%
+52.          ChoiGiSung -> 16.0%
+53.        manOfBackend -> 16.0%
+54.          jiwoo-choi -> 16.0%
+55.             honux77 -> 16.0%
+56.           rshak8912 -> 16.0%
+57.               uHan2 -> 16.0%
+58.          dmstjd1024 -> 16.0%
+59.          asqwklop12 -> 16.0%
+60.          Junhan0037 -> 16.0%
+61.          hypernova1 -> 16.0%
+62.         dev-jaekkim -> 16.0%
+63.          dudqls5271 -> 16.0%
+64.             abcdsds -> 16.0%
+65.           hong918kr -> 16.0%
+66.           jongyeans -> 16.0%
+67.        WonYong-Jang -> 16.0%
+68.           addadda15 -> 16.0%
+69.              JsKim4 -> 16.0%
+70.          sowhat9293 -> 16.0%
+71.             jigmini -> 16.0%
+72.        DevelopJKong -> 16.0%
+73.         hongminpark -> 16.0%
+74.        haemin-jeong -> 16.0%
+75.           kingsubin -> 16.0%
+76.            YeseulDo -> 16.0%
+77.              372dev -> 16.0%
+78.            LeeWoooo -> 16.0%
+79.               yky03 -> 16.0%
+80.          GunnwooKim -> 16.0%
+81.          jwsims1995 -> 16.0%
+82.               m3252 -> 16.0%
+83.            wdEffort -> 16.0%
+84.          rlatmd0829 -> 16.0%
+85.            msmn1729 -> 16.0%
+86.      sweetchinmusic -> 16.0%
+87.         0417taehyun -> 16.0%
+88.           MoonHKLee -> 16.0%
+89.        devShLee7017 -> 16.0%
+90.             ysmiler -> 16.0%
+91.             hyeonic -> 16.0%
+92.            ksundong -> 16.0%
+93.            Yadon079 -> 16.0%
+94.             9m1i9n1 -> 16.0%
+95.                etff -> 16.0%
+96.              devvip -> 16.0%
+97.          koreas9408 -> 16.0%
+98.           damho1104 -> 16.0%
+99.          league3236 -> 16.0%
+100.                gtpe -> 16.0%
+101.          Chohongjae -> 16.0%
+102.          ohjoohyung -> 16.0%
+103.        sungpillhong -> 16.0%
+104.         doyoung0205 -> 16.0%
+105.           sunnynote -> 16.0%
+106.           Jangilkyu -> 16.0%
+107.            pond1029 -> 16.0%
+108.         conyconydev -> 16.0%
+109.           yeGenieee -> 16.0%
+110.           garlickim -> 16.0%
+111.           jikimee64 -> 16.0%
+112.             mongzza -> 16.0%
+113.           iseunghan -> 16.0%
+114.               GGob2 -> 16.0%
+115.               Yo0oN -> 16.0%
+116.              yeo311 -> 16.0%
+117.            giyeon95 -> 16.0%
+118.             gblee87 -> 16.0%
+119.          Jason-time -> 16.0%
+120.          JoosJuliet -> 16.0%
+121.             jessi68 -> 11.0%
+122.          ohhhmycode -> 11.0%
+123.             fpdjsns -> 11.0%
+124.            jaxx2001 -> 11.0%
+125.             zhaoSeo -> 11.0%
+126.            star1606 -> 11.0%
+127.           jaeyeon93 -> 11.0%
+128.              Rebwon -> 11.0%
+129.            younwony -> 11.0%
+130.           whiteship -> 11.0%
+131.         surfing2003 -> 11.0%
+132.       Youngjin-KimY -> 11.0%
+133.       accidentlywoo -> 11.0%
+134.        cold-pumpkin -> 11.0%
+135.         HyeonWuJeon -> 11.0%
+136.            tbnsok40 -> 11.0%
+137.             sjhello -> 11.0%
+138.          sangwoobae -> 11.0%
+139.             inhalin -> 11.0%
+140.             keunyop -> 11.0%
+141.          ByungJun25 -> 11.0%
+142.           Dubidubab -> 11.0%
+143.             2yeseul -> 11.0%
+144.              DevRyu -> 11.0%
+145.              JOYB28 -> 11.0%
+146.             gintire -> 11.0%
+147.      good-influence -> 11.0%
+148.              elon09 -> 11.0%
+149.          dongyeon94 -> 11.0%
+150.              tocgic -> 11.0%
+151.            ehdrhelr -> 11.0%
+152.           gurumee92 -> 11.0%
+153.           devksh930 -> 11.0%
+154.          jaewon0913 -> 11.0%
+155.         JeongJin984 -> 11.0%
+156.            kksb0831 -> 11.0%
+157.           sinchang1 -> 11.0%
+158.      ShimSeoungChul -> 11.0%
+159.             Gomding -> 11.0%
+160.          ParkIlHoon -> 11.0%
+161.            lee-jemu -> 11.0%
+162.              sujl95 -> 11.0%
+163.             fkfkfk9 -> 11.0%
+164.       Kim-JunHyeong -> 11.0%
+165.          JoongSeokD -> 11.0%
+166.               s0w0s -> 11.0%
+167.              mokaim -> 11.0%
+168.        kimseungki94 -> 11.0%
+169.            coldhoon -> 11.0%
+170.     choiyoungkwon12 -> 11.0%
+171.             ggomjae -> 5.0%
+172.              hyngsk -> 5.0%
+173.              metorg -> 5.0%
+174.             cbw1030 -> 5.0%
+175.           JuHyun419 -> 5.0%
+176.     SnowisTargaryen -> 5.0%
+177.         Lee-jaeyong -> 5.0%
+178.              hyenny -> 5.0%
+179.              yks095 -> 5.0%
+180.           angelatto -> 5.0%
+181.             TaeYing -> 5.0%
+182.              cs7998 -> 5.0%
+183.          yallyyally -> 5.0%
+184.          monkeyDugi -> 5.0%
+185.           sangw0804 -> 5.0%
+186.          tjdqls1200 -> 5.0%
+187.           zilzu4165 -> 5.0%
+188.           jaehyunup -> 5.0%
+189.              id6827 -> 5.0%
+190.             Ahnyezi -> 5.0%
+191.             ldw1220 -> 5.0%
+192.              hanull -> 5.0%
+193.              lleezz -> 5.0%
+194.           goodzzong -> 5.0%
+195.             kyunyan -> 5.0%
+196.           EdwardJae -> 5.0%
+197.              hwonny -> 5.0%
+198.           batboy118 -> 5.0%
+199.         riyenas0925 -> 5.0%
+200.             jeeneee -> 5.0%
+201.            ssayebee -> 5.0%
+202.        castleCircle -> 5.0%
+203.           kimmy100b -> 5.0%
+204.            junhok82 -> 5.0%
+205.             kdm8939 -> 5.0%
+206.            kopokero -> 5.0%
+207.           redbean88 -> 5.0%
+208.         nekisse-lee -> 5.0%
+209.              ghwann -> 5.0%
+210.            oktopman -> 5.0%
+211.         memoregoing -> 5.0%
+212.             BaeJi77 -> 5.0%
+
+
+```
+
+</details>
+<br><br>
+
+
+
 <br>
 
 
