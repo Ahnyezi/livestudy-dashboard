@@ -90,7 +90,7 @@
 ### 2. 코드 구성
 
 #### 우선 결과물은 다음과 같다!
-
+<br>
 
 <img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard1.gif?raw=true" width="180%">
 <br>
