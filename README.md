@@ -1,5 +1,5 @@
 
-## :pushpin: 과제2 livestudy 대시보드 코드 작성
+## :pushpin: (4주차 과제2) livestudy 대시보드 코드 작성
 
 ### :bulb:  Requirements
 -   깃헙 이슈 1번부터 18번까지 댓글을 순회하며 댓글을 남긴 사용자를 체크 할 것.
