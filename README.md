@@ -92,7 +92,7 @@
 #### 우선 결과물은 다음과 같다!
 <br><br>
 
-<img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard1.gif?raw=true" width="180%">
+<img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard.gif?raw=true" width="180%">
 <br>
 
 <img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard2.gif?raw=true" width="180%">
