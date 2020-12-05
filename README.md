@@ -42,15 +42,16 @@
 
 ### 1. GitHub 자바 라이브러리
 
-**프로그램 내에서 깃허브에 접근할 수 있게해주는 라이브러리이다.**<br>
+
+![image](https://user-images.githubusercontent.com/62331803/101235118-ed928280-3708-11eb-948c-8d15a1ad093f.png)
 <br>
 
-![image](https://user-images.githubusercontent.com/62331803/101135457-2b32d500-364f-11eb-8827-ea9540f72c22.png)
-<br>
+**과제 예시에 올려주신 GitHub 자바 라이브러리를 알아보았다.** <br>
 
-`Introduction`을 보면, **객체지향적 관점에서, GitHub의 여러가지 객체에 접근할 수 있게 한 라이브러리**라고 적혀있다.<br>
-
-쉽게 말해서 **내가 짠 프로그램에서 깃허브에 접속**하고, **여러 정보(repository 정보, issue 내용, comment 내용 등..)에 접근할 수 있게 해주는 API**인 것이다.<br>
+- 해당 라이브러리는 GitHub API를 Object Oriented(객체지향)적인 관점에서 사용할 수 있도록 만들어진 자바 언어 기반의 라이브러리이다.
+- 해당 라이브러리에는 `GHUser(깃허브유저)`, `GHRepository(깃허브리포지토리)`,`GHOrganization(깃허브그룹)` 등 깃허브에서 사용되는 각각의 도메인 모델들을 제어하기 위한 클래스가 존재하며, 각 클래스의 메서드를 통해서 깃허브 사이트에서 사용할 수 있는 다양한 기능을 프로그램 내에서 사용할 수 있다. 
+   - 예를 들어, `GHUser` 클래스의 isMemberOf(GHOrganization) 메서드는 특정 깃허브 유저가 특정 깃허브 그룹의 멤버인지 참/거짓 여부를 반환한다.
+   - 이와 같이 **객체** 형태로 깃허브 상의 정보를 제어하며 프로그램에 활용할 수 있는 것이다. 
 <br>
 
 **본격적으로 이 API를 이용해서 live-study 대시보드를 만들어보자!**<br>
