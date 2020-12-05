@@ -77,7 +77,7 @@
 
 > 설치완료<br>
 
-![image](https://user-images.githubusercontent.com/62331803/101136611-ef990a80-3650-11eb-857a-f9782d58fb82.png)
+![image](https://user-images.githubusercontent.com/62331803/101235537-baea8900-370c-11eb-9514-0f5f77df677e.png)
 <br>
 
 > 이제 해당 라이브러리를 import해서 사용할 수 있다<br>
