@@ -690,35 +690,6 @@ public class main {
 
 #### 3.1. 깃허브 자바 라이브러리를 사용하며
 
-이 라이브러리는 처음 사용해보았다. <br>
-
-:point_right: **코드가 어떻게 구현되어 있는지 궁금해서 소스코드가 있는 저장소에 가보았다.**<br>
-
-![image](https://user-images.githubusercontent.com/62331803/101229897-d9895980-36e5-11eb-89c9-9b9c72be3750.png)
-<br>
-
-ㅎ................<br>
-
-**GitHub.java파일 하나로도 스크롤 양이 어마무시하다**<br>
-
-![image](https://user-images.githubusercontent.com/62331803/101230057-9ed3f100-36e6-11eb-8803-148787a0c82e.png)
-<br>
-
-정말 많은 코드가 복잡하게 얽혀있는 구조였다.. **콘스케 카와구치**님 정말 대단하시다 :thumbsup: <br>
-
-시간 남으면 하나씩 뜯어봐야겠다.<br>
-<br>
-
-:point_right: 개인적으로 **Pluggable HTTP client**라는 설명이 잘 이해가 안되었다.
-
-![image](https://user-images.githubusercontent.com/62331803/101230171-27eb2800-36e7-11eb-8516-ee1af45249b4.png)
-<br>
-
-> 이 라이브러리는 HttpConnector를 통해 다른 HTTP 클라이언트 구현을 사용하기 위한 플러그형 커넥터와 함께 제공됩니다. 특히 OkHttp를 사용할 수 있으므로 HTTP 응답 캐시를 사용할 수 있습니다. GitHub API에 대한 조건부 요청을 만들고 304응답을 받는 것은 속도 제한에 포함되지 않습니다. 
-<br>
-
-
-
 #### 3.2. 자바 람다식
 
 #### 3.3. 단위 테스트의 필요성
