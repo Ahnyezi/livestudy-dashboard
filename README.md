@@ -92,10 +92,10 @@
 #### 우선 결과물은 다음과 같다!
 <br>
 
-![image](https://user-images.githubusercontent.com/62331803/101236081-78777b00-3711-11eb-9f60-2ddf2c8746e3.png)
+![alt-text](https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard1.gif?raw=true)
 <br>
 
-![image](https://user-images.githubusercontent.com/62331803/101236090-9d6bee00-3711-11eb-932b-75c62d9133e8.png)
+![alt-text](https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard2.gif?raw=true)
 <br>
 <br>
 
