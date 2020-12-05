@@ -91,10 +91,11 @@
 
 #### 우선 결과물은 다음과 같다!
 
-![alt-text](https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard1.gif?raw=true)
+
+<img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard1.gif?raw=true" width="180%">
 <br>
 
-![alt-text](https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard2.gif?raw=true)
+<img src="https://github.com/Ahnyezi/livestudy-dashboard/blob/master/dashboard2.gif?raw=true" width="180%">
 <br>
 
 
