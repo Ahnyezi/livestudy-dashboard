@@ -376,7 +376,7 @@
 
 - 깃허브에 접속하기 위한 방법은 여러가지가 있다.<br>
   
-![image](https://user-images.githubusercontent.com/62331803/101137608-75698580-3652-11eb-8194-ce919c44b053.png)
+  <img src="https://user-images.githubusercontent.com/62331803/101137608-75698580-3652-11eb-8194-ce919c44b053.png" width="70%">
 <br>
 
 - 나는 `Personal access tokens`을 통해 접속하는 방식을 택했다. 
@@ -430,7 +430,6 @@ public class GHConnect {
 - 사용자로부터 리포지토리 이름을 받아 `GHRepository` 객체를 생성한다.
 - 해당 리포지토리 안에 issue를 순회하며 comment를 남긴 user id를 가져온다.
 - `user id`를 key, `comment`개수를 value로 가지는 Map을 만들어, User마다 출석횟수를 저장한다.
-- 
 
 ```java
 package livestudy.mission4;
@@ -704,7 +703,7 @@ public class main {
 
 #### 3.1. 깃허브 자바 라이브러리를 사용하며
 
-![image](https://user-images.githubusercontent.com/62331803/101240382-5e01c980-3732-11eb-81ac-b3288b57e448.png)
+<img src="https://user-images.githubusercontent.com/62331803/101240382-5e01c980-3732-11eb-81ac-b3288b57e448.png" width="60%">
 <br>
 
 이번 과제를 통해 **Open API**를 처음 사용해보았다.<br>
@@ -764,11 +763,11 @@ HTTP POST, http://myweb/users/
 
 #### 3.1.3. HTTP 프로토콜이란
    -  **웹 브라우저와 웹 서버가 통신할 때 사용하는 일종의 규칙/규약**이다.
-    - 기본적으로 **서버/클라이언트 모델**을 따른다.
-    -   `클라이언트` => `request` => `웹 서버` => `response` => `클라이언트`
-          - `(예)` 사용자가 크롬 브라우저로 `www.naver.com`에 접속하려한다
-          - `request`:  사용자(클라이언트)가 해당 URL을 주소창에 입력한다.
-          - `response`: `request`를 받은 웹 서버가 `www.naver.com`을 띄우기 위한 데이터를 제공한다.
+   - 기본적으로 **서버/클라이언트 모델**을 따른다.
+   -  **클라이언트** => `request` => **웹 서버** => `response` => **클라이언트**
+      - `(예)` 사용자가 크롬 브라우저로 `www.naver.com`에 접속하려한다
+      - `request`:  사용자(클라이언트)가 해당 URL을 주소창에 입력한다.
+      - `response`: `request`를 받은 웹 서버가 `www.naver.com`을 띄우기 위한 데이터를 제공한다.
         
 <br>
 
@@ -776,7 +775,7 @@ HTTP POST, http://myweb/users/
 
 **Octokit : 깃허브 API Wrapper**<br>
 
-![image](https://user-images.githubusercontent.com/62331803/101243959-e722fb80-3746-11eb-992c-a638ba27d2c4.png)
+<img src="https://user-images.githubusercontent.com/62331803/101243959-e722fb80-3746-11eb-992c-a638ba27d2c4.png" width="70%">
 <br>
 
  사실상 [GitHub API](https://developer.github.com/v3/)를 사용하기 위해서는 API 요청 형식이 어떻게 되고, 그에 따른 응답 형식이 어떻게 되는지를 하나씩 살펴본 뒤, 프로그램 안에서 해당 요청/응답 처리를 직접 해야 한다. <br>
