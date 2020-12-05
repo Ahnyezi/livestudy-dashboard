@@ -796,7 +796,7 @@ HTTP POST, http://myweb/users/
 - [Using Octokit.net to authenticate your app with GitHub](https://haacked.com/archive/2014/04/24/octokit-oauth/)
 - [What Is a REST API?](https://www.sitepoint.com/developers-rest-api/)
 - [REST란? REST API란? RESTful이란?](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
-- [REST API 설계](#https://www.slideshare.net/Byungwook/rest-api-60505484)
+- [REST API 설계](https://www.slideshare.net/Byungwook/rest-api-60505484)
 
 <br><br>
 
