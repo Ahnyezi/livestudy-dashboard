@@ -1,5 +1,4 @@
 ## 4주차 과제1 : GitHub API를 사용해서 live-study 대시보드를 만들기
-<br><br>
 
 ### :bulb:  Requirements
 -   깃헙 이슈 1번부터 18번까지 댓글을 순회하며 댓글을 남긴 사용자를 체크 할 것.
