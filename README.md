@@ -24,7 +24,7 @@
      - 2.0. [결과물](#우선-결과물은-다음과-같다)
      - 2.1. [GHConnect : 깃허브 객체 생성](#21-GHConnect--깃허브-객체-생성)
      - 2.2. [Dao : 데이터 관리](#22--Dao--데이터-관리)
-     - 2.3. [Service : 화면 출력](#23--Service--화면-출력)
+     - 2.3. [Service : 기능 출력](#23--Service--기능-출력)
      - 2.4. [Menu : 메뉴](#24--Menu--메뉴)
      - 2.5. [main : 메인](#25--main--메인)
      
@@ -552,7 +552,7 @@ public class Dao {
 <br><br>
 
 
-#### 2.3. Service : 화면 출력
+#### 2.3. Service : 기능 출력
 
 ```java
 package livestudy.mission4;
