@@ -10,7 +10,7 @@
 
 :bulb:  **목표**  <br>
 - `깃허브 Java 라이브러리 이해`
-- `MVC 패턴으로 짜기`
+- `Dto-Dao-Service 구조로 짜기`
 - `사용자에게 Repository name 받아와서 해당 repo 객체 생성하기`
 - `메뉴 만들기`
    - `아이디별 출석율 검색`
