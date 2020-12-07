@@ -1,5 +1,5 @@
-
-## :pushpin: (4주차 과제2) livestudy 대시보드 코드 작성
+## 4주차 과제1 : GitHub API를 사용해서 live-study 대시보드를 만들기
+<br><br>
 
 ### :bulb:  Requirements
 -   깃헙 이슈 1번부터 18번까지 댓글을 순회하며 댓글을 남긴 사용자를 체크 할 것.
@@ -7,7 +7,7 @@
 -   [Github 자바 라이브러리](https://github-api.kohsuke.org/)를 사용하면 편리합니다.
 -   깃헙 API를 익명으로 호출하는데 제한이 있기 때문에 본인의 깃헙 프로젝트에 이슈를 만들고 테스트를 하시면 더 자주 테스트할 수 있습니다.
 <br><br>
-<br>
+
 
 :bulb:  **목표**  <br>
 - `깃허브 Java 라이브러리 이해`
@@ -16,10 +16,9 @@
 - `메뉴 만들기`
    - `아이디별 출석율 검색`
    - `출석랭크 높은 순으로 정렬해서 출력`
+<br><br>
 
-<br>
-
- :point_right: **목차**   <br>
+:point_right: **목차**   <br>
 1. [GitHub 자바 라이브러리 ?](#1-GitHub-자바-라이브러리)
 
 2. [코드 구성](#2-코드-구성)
@@ -36,9 +35,10 @@
 	     - 3.1.2. [REST API란](#312-REST-API란)
 	     - 3.1.3. [HTTP 프로토콜이란](#313-HTTP-프로토콜이란) 
 	     - 3.1.4. [Octokit과 Third Party libraries](#314-octokit과-third-party-libraries)
+      - 3.2 [테스트와 리팩토링](#32-테스트와-리팩토링)
 
 
-<br>
+<br><br><br>
 
 
 ### 1. GitHub 자바 라이브러리
@@ -47,7 +47,7 @@
 ![image](https://user-images.githubusercontent.com/62331803/101235118-ed928280-3708-11eb-948c-8d15a1ad093f.png)
 <br>
 
-**과제 예시에 올려주신 [GitHub 자바 라이브러리](https://github-api.kohsuke.org/)를 알아보았다.** <br>
+**우선 [GitHub 자바 라이브러리](https://github-api.kohsuke.org/)를 알아보았다.** <br>
 
 - 우선 [GitHub API](https://developer.github.com/v3/)란, GitHub가 제공하는 다양한 정보와 기능을 개발자의 응용 프로그램에서 사용할 수 있도록 제공하는 GitHub의 인터페이스이다. 
 - 해당 라이브러리는 이러한 GitHub API를 Object Oriented(객체지향)적인 관점에서 사용할 수 있도록 만들어진 자바 언어 기반의 라이브러리이다.
@@ -57,7 +57,8 @@
 <br>
 
 **본격적으로 이 API를 이용해서 live-study 대시보드를 만들어보자!**<br>
-<br>
+
+<br><br>
 
 ### 1. 라이브러리 설치
 
@@ -85,8 +86,7 @@
 
 ![image](https://user-images.githubusercontent.com/62331803/101136746-2111d600-3651-11eb-867b-a0b757e5f440.png)
 <br>
-<br>
-
+<br><br>
 
 ### 2. 코드 구성
 
@@ -697,7 +697,6 @@ public class main {
 <br><br>
 
 
-
 ### 3. 회고
 
 #### 3.1. 깃허브 자바 라이브러리를 사용하며
@@ -706,10 +705,9 @@ public class main {
 <br>
 
 이번 과제를 통해 **Open API**를 처음 사용해보았다.<br>
-그동안 막연하게 알고 있던 **네트워크와 API 관련 개념들**을 공부할 수 있는 좋은 기회였다.<br>
-<br>
-
-:point_right: **공부한 내용을 정리해보았다**<br>
+그동안 막연하게 알고 있던 **네트워크와 API 관련 개념들**을 공부할 수 있는 좋은 기회였다!<br>
+과제를 하는 동안 조사하며 얻은 내용을 간략히 정리해보았다. <br>
+<br><br>
 
 #### 3.1.1. Open API란
    -  **누구나 사용할 수 있도록 공개한 API** 
@@ -727,7 +725,9 @@ public class main {
 <details>
 <summary> REST 기본 </summary>
 
-**REST 구성**<BR>
+<br>
+
+**REST 구성**<br>
 
 ![image](https://user-images.githubusercontent.com/62331803/101243445-cad18f80-3743-11eb-996b-6218e566f936.png)
 <br>
@@ -756,8 +756,10 @@ HTTP POST, http://myweb/users/
 - `Representation(표현)`: **name(이름) : yeji**
 
 **=> 사용자라는 Resource(//myweb/users), 이름이 "yeji"인 Representation으로, 새로운 사용자를 생성 (HTTP POST)**
+<br>
 
 </details> 
+
 <br>
 
 #### 3.1.3. HTTP 프로토콜이란
@@ -789,15 +791,37 @@ HTTP POST, http://myweb/users/
 
 <br><br>
 
-:orange_book: *Reference*<br>
+#### 3.2. 테스트와 리팩토링
+
+과제 제출이 5일까진 줄 알고, **JUnit5** 공부를 건너 뛰고 대시보드 과제부터 했는데...<br>
+다시 보니 12일까지였다 ㅎ <br>
+<br>
+
+**JUnit**을 공부하면서 구글링을 하다 보니, `Test`, `Convention`, `Refactoring` 등의 내용을 함께 접하게 되었다.<br>
+여태껏 내가 얼마나 생각 없이 코드를 짰는가... 에 대해 반성을 하게 되었다.<br>
+<br>
+
+여튼! 그래서 공부한 내용을 기반으로<br>
+`JUnit 테스트`, `자바 컨벤션` 등을 고려해서 **대시보드 코드를 리팩토링 해볼 생각**이다!<br>
+<br>
+
+:orange_book: *References*<br>
 - [GitHub Developer REST API v3](https://developer.github.com/v3/libraries/)
 - [Octokit을 이용하여 GitHub 앱 만들기](https://blog.aliencube.org/ko/2015/06/22/developing-github-app-with-octokit/)
 - [Using Octokit.net to authenticate your app with GitHub](https://haacked.com/archive/2014/04/24/octokit-oauth/)
 - [What Is a REST API?](https://www.sitepoint.com/developers-rest-api/)
 - [REST란? REST API란? RESTful이란?](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
 - [REST API 설계](https://www.slideshare.net/Byungwook/rest-api-60505484)
+- [캠퍼스 핵데이 Java 코딩 컨벤션](https://naver.github.io/hackday-conventions-java/)
+- [우아한 테크 세미나 TDD 리팩토링](https://youtu.be/bIeqAlmNRrA)
+
 
 <br><br>
+
+
+
+
+
 
 
 
