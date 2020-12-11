@@ -85,13 +85,13 @@
 
 > 내가 만든 maven 프로젝트의 pom.xml에 붙여넣는다<br>
 
-![image](https://user-images.githubusercontent.com/62331803/101136515-c8423d80-3650-11eb-8a2a-0eeace810af9.png)
+![image](https://user-images.githubusercontent.com/62331803/101880679-a6a7ff80-3bd6-11eb-97e0-57419ef2fee6.png)
 <br>
 
 
 > 설치완료<br>
 
-![image](https://user-images.githubusercontent.com/62331803/101235537-baea8900-370c-11eb-9514-0f5f77df677e.png)
+![image](https://user-images.githubusercontent.com/62331803/101880703-b32c5800-3bd6-11eb-94f8-f154d9de9ef2.png)
 <br>
 
 > 이제 해당 라이브러리를 import해서 사용할 수 있다<br>
