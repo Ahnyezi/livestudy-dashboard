@@ -6,11 +6,14 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 public class GHConnect {
-	private static final String personalToken = "Insert your personal token";
-	private static final Logger LOG = Logger.getGlobal();
-	private GitHub github;
+	private static final String personalToken = "90531822a17047dd164a452f056543309693306b";
+//	private static final String personalToken = "Insert your personal token";
+	private static GHConnect con = new GHConnect();
+	private Logger LOG = Logger.getGlobal();
+	private static GitHub github;
 
-	public GHConnect() {
+	private GHConnect() {
+		LOG.info("GHConnect 객체 생성 중");
 		try {// 깃허브 객체 생성
 			this.github = new GitHubBuilder().withOAuthToken(personalToken).build();
 			LOG.info("깃 계정 연결 성공");
@@ -18,11 +21,8 @@ public class GHConnect {
 			LOG.info("깃 계정 연결 실패. 재 연결이 필요합니다.");
 		}
 	}
-	public GitHub getConnection() {
+	
+	public static GitHub getConnection() {
 		return github;
-	}
-
-	public Logger getLog() {
-		return LOG;
 	}
 }

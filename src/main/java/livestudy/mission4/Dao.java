@@ -13,30 +13,29 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import org.junit.jupiter.api.Test;
+import org.kohsuke.github.GHContent;
+import org.kohsuke.github.GHContentBuilder;
+import org.kohsuke.github.GHContentUpdateResponse;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueComment;
 import org.kohsuke.github.GHIssueState;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
+import org.kohsuke.github.GitHubBuilder;
 
 import livestudy.mission4.ghcon.GHConnect;
 
 public class Dao {
-	private Logger LOG; 
-	private GitHub github;
+	private Logger LOG = Logger.getGlobal(); 
+	private static GitHub github;
 	private GHRepository repo;
 	private Map<String, Integer> participants; // userid와 참여횟수
 	private int total; 						   // 이슈 총 개수
 
 	public Dao() throws IOException {
-		GHConnect con = new GHConnect();
-		this.github = con.getConnection(); 	   // GHConnect로부터 깃허브 객체 가져오기
-		this.LOG = con.getLog(); 			   // GHConnect로부터 로그 객체 가져오기
+		this.github = GHConnect.getConnection(); 	   // GHConnect로부터 깃허브 객체 가져오기
 		this.participants = new HashMap<String, Integer>();
-	}
-	
-	public Logger getLog() {
-		return this.LOG;
 	}
 
 	// 리포지토리 세팅

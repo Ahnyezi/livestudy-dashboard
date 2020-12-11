@@ -6,11 +6,9 @@ import java.util.logging.Logger;
 
 public class Service {
 	private Dao dao;
-	private Logger LOG;
 
 	public Service() throws IOException {
 		this.dao = new Dao();
-		this.dao.getLog();
 	}
 
 	// 리포지토리 세팅
