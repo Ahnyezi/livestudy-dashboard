@@ -1,3 +1,4 @@
+
 ## 4주차 과제1 : GitHub API를 사용해서 live-study 대시보드를 만들기
 
 ### :bulb:  Requirements
@@ -8,13 +9,24 @@
 <br><br>
 
 
-:bulb:  **목표**  <br>
-- `깃허브 Java 라이브러리 이해`
-- `Dto-Dao-Service 구조로 짜기`
-- `메뉴 만들기`
-   - `아이디 입력받아 아이디별 출석율 검색`
-   - `출석률을 기준으로 내림차순 정렬하여 출석랭킹 검색`
-<br><br>
+### 회고
+원래 목표는 기선님이 하신 것 처럼 README 파일에 직접 Grid형태로 대시보드를 작성해보는 것이었다!<br>
+근데... 이상하게 fork된 리포지토리가 아니면 리포지토리 자체를 읽어오지 못했다...ㅠㅠㅠ <br>
+
+> 다른 계정에서 fork한 리포지토리<br>
+
+<img src="https://user-images.githubusercontent.com/62331803/101879752-2339de80-3bd5-11eb-9343-ca4b88ed5b88.png" width="50%"><br>
+
+> 내가 직접 생성한 리포지토리<br>
+
+<img src="https://user-images.githubusercontent.com/62331803/101879595-ec63c880-3bd4-11eb-8fcc-2da60266e7a3.png" width="50%"><br>
+<br>
+
+문제를 차차 찾아보기로 하고... 일단 콘솔에 출력하는 프로그램을 짜봤다!<br>
+
+
+
+<br>
 
 :point_right: **목차**   <br>
 1. [GitHub 자바 라이브러리](#1-GitHub-자바-라이브러리)
@@ -27,8 +39,8 @@
      - 2.4. [Menu : 메뉴](#24--Menu--메뉴)
      - 2.5. [main : 메인](#25--main--메인)
      
-3. [회고](#3-회고)
-      - 3.1 [깃허브 자바 라이브러리를 사용하며](#31-깃허브-자바-라이브러리를-사용하며)
+3. [공부한 내용](#3-공부한-내용)
+      - 3.1 [깃허브 자바 라이브러리](#31-깃허브-자바-라이브러리)
          - 3.1.1. [Open API란](#311-Open-API란)
 	     - 3.1.2. [REST API란](#312-REST-API란)
 	     - 3.1.3. [HTTP 프로토콜이란](#313-HTTP-프로토콜이란) 
@@ -695,9 +707,9 @@ public class main {
 <br><br>
 
 
-### 3. 회고
+### 3. 공부한 내용
 
-#### 3.1. 깃허브 자바 라이브러리를 사용하며
+#### 3.1. 깃허브 자바 라이브러리
 
 <img src="https://user-images.githubusercontent.com/62331803/101240382-5e01c980-3732-11eb-81ac-b3288b57e448.png" width="60%">
 <br>
