@@ -6,8 +6,7 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 public class GHConnect {
-	private static final String personalToken = "90531822a17047dd164a452f056543309693306b";
-//	private static final String personalToken = "Insert your personal token";
+	private static final String personalToken = "Insert your personal token";
 	private static GHConnect con = new GHConnect();
 	private Logger LOG = Logger.getGlobal();
 	private static GitHub github;
