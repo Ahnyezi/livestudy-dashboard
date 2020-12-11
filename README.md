@@ -470,24 +470,25 @@
 
 - 나는 `Personal access tokens`을 통해 접속하는 방식을 택했다. 
 - [참고자료](https://calvinjmkim.tistory.com/19)
-- 깃허브 객체와 로그 객체는 현재 클래스에서 하나만 생성해서 공유하도록 했다.
+- 깃허브 객체는 현재 클래스에서 하나만 생성해서 공유하도록 했다.
 
 
 ```java
 package livestudy.mission4.ghcon;
 
-import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 public class GHConnect {
-	private static final String personalToken = "Insert your personal token";
-	private static final Logger LOG = Logger.getGlobal();
-	private GitHub github;
+	private static final String personalToken = "e3699907459eca6991ba25480926373a166fe975";
+//	private static final String personalToken = "Insert your personal token";
+	private static GHConnect con = new GHConnect();
+	private Logger LOG = Logger.getGlobal();
+	private static GitHub github;
 
-	public GHConnect() {
+	private GHConnect() {
 		try {// 깃허브 객체 생성
 			this.github = new GitHubBuilder().withOAuthToken(personalToken).build();
 			LOG.info("깃 계정 연결 성공");
@@ -495,15 +496,12 @@ public class GHConnect {
 			LOG.info("깃 계정 연결 실패. 재 연결이 필요합니다.");
 		}
 	}
-
-	public GitHub getConnection() {
+	
+	public static GitHub getConnection() {
 		return github;
 	}
-
-	public Logger getLog() {
-		return LOG;
-	}
 }
+
 ```
 <br>
 
@@ -523,6 +521,7 @@ public class GHConnect {
 ```java
 package livestudy.mission4;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -535,30 +534,29 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import org.junit.jupiter.api.Test;
+import org.kohsuke.github.GHContent;
+import org.kohsuke.github.GHContentBuilder;
+import org.kohsuke.github.GHContentUpdateResponse;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueComment;
 import org.kohsuke.github.GHIssueState;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
+import org.kohsuke.github.GitHubBuilder;
 
 import livestudy.mission4.ghcon.GHConnect;
 
 public class Dao {
-	private Logger LOG; 
-	private GitHub github;
+	private Logger LOG = Logger.getGlobal(); 
+	private static GitHub github;
 	private GHRepository repo;
 	private Map<String, Integer> participants; // userid와 참여횟수
-	private int total; // 이슈 총 개수
+	private int total; 						   // 이슈 총 개수
 
 	public Dao() throws IOException {
-		GHConnect con = new GHConnect();
-		this.github = con.getConnection(); // GHConnect로부터 깃허브 객체 가져오기
-		this.LOG = con.getLog(); // GHConnect로부터 로그 객체 가져오기
+		this.github = GHConnect.getConnection(); 	   // GHConnect로부터 깃허브 객체 가져오기
 		this.participants = new HashMap<String, Integer>();
-	}
-	
-	public Logger getLog() {
-		return this.LOG;
 	}
 
 	// 리포지토리 세팅
@@ -571,25 +569,28 @@ public class Dao {
 			LOG.info("정보를 읽고 있습니다. 잠시만 기다려주십시오.");
 			setAttendance();
 			flag = true;
-		} catch (java.io.FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			LOG.info("'" + repo + "' 리포지토리는 존재하지 않습니다.");
 			flag = false;
-		} finally {
+		} catch (NullPointerException e){
+			LOG.info("null pointer exception");
+			flag = false;			
+		}finally {
 			return flag;
 		}
 	}
 
 	// 세팅된 repository의 유저별 출석정보 세팅
 	public void setAttendance() throws IOException {
-		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL); // 세팅된 리포지토리의 전체 issue
-		Set<String> nameList = new HashSet<String>(); 		       // 하나의 issue에 코멘트를 남긴 user id를 담기 위한 임시 set (중복제거 위함)
-		this.total = allTheIssues.size(); 			       // 출석율 계산을 위한 이슈 총 개수
+		List<GHIssue> allTheIssues = repo.getIssues(GHIssueState.ALL);  	// 세팅된 리포지토리의 전체 issue
+		Set<String> nameList = new HashSet<String>(); 				    	// 하나의 issue에 코멘트를 남긴 user id를 담기 위한 임시 set (중복제거 위함)
+		this.total = allTheIssues.size(); 							    	// 출석율 계산을 위한 이슈 총 개수
 		
-		for (GHIssue issueForAWeek : allTheIssues) {				// 이슈를 1주자씩 가져와서
+		for (GHIssue issueForAWeek : allTheIssues) {				    	// 이슈를 1주자씩 가져와서
 			for (GHIssueComment comment : issueForAWeek.getComments()) {	// 해당 이슈의 전체 코멘트 가져오기
-				nameList.add(comment.getUser().getLogin()); 	        // 코멘트의 user id를 namelist(임시 set)에 삽입
+				nameList.add(comment.getUser().getLogin()); 				// 코멘트의 user id를 namelist(임시 set)에 삽입
 			}
-			insertNames(nameList);						// map<id, count>의 value(출석횟수) 증가시키기
+			insertNames(nameList);											// map<id, count>의 value(출석횟수) 증가시키기
 			nameList.clear();
 		}
 	}
@@ -597,9 +598,9 @@ public class Dao {
 	// 만들어진 임시 set으로 map의 count(출석횟수) 증가시키기
 	public void insertNames(Set<String> nameList) {
 		nameList.forEach((name) -> {
-			if (this.participants.containsKey(name)) {			// 이미 map에 존재하는 id일 경우
+			if (this.participants.containsKey(name)) {						// 이미 map에 존재하는 id일 경우
 				this.participants.put(name, participants.get(name) + 1);	
-			} else {						        // map에 존재하지 않는 id일 경우
+			} else {														// map에 존재하지 않는 id일 경우
 				this.participants.put(name, 1);
 			}
 		});
@@ -638,6 +639,7 @@ public class Dao {
 		return result;
 	}
 }
+
 ```
 
 <br><br>
@@ -654,11 +656,9 @@ import java.util.logging.Logger;
 
 public class Service {
 	private Dao dao;
-	private Logger LOG;
 
 	public Service() throws IOException {
 		this.dao = new Dao();
-		this.dao.getLog();
 	}
 
 	// 리포지토리 세팅
@@ -687,6 +687,7 @@ public class Service {
 		System.out.println("\n");
 	}
 }
+
 ```
 <br><br>
 
