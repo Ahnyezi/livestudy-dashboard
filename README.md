@@ -488,6 +488,7 @@ public class GHConnect {
 	private static GitHub github;
 
 	private GHConnect() {
+		LOG.info("GHConnect 객체 생성 중");
 		try {// 깃허브 객체 생성
 			this.github = new GitHubBuilder().withOAuthToken(personalToken).build();
 			LOG.info("깃 계정 연결 성공");
