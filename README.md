@@ -482,8 +482,7 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 public class GHConnect {
-	private static final String personalToken = "e3699907459eca6991ba25480926373a166fe975";
-//	private static final String personalToken = "Insert your personal token";
+	private static final String personalToken = "Insert your personal token";
 	private static GHConnect con = new GHConnect();
 	private Logger LOG = Logger.getGlobal();
 	private static GitHub github;
