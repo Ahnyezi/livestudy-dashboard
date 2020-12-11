@@ -15,11 +15,11 @@
 
 > 다른 계정에서 fork한 리포지토리<br>
 
-<img src="https://user-images.githubusercontent.com/62331803/101879752-2339de80-3bd5-11eb-9343-ca4b88ed5b88.png" width="50%"><br>
+<img src="https://user-images.githubusercontent.com/62331803/101879752-2339de80-3bd5-11eb-9343-ca4b88ed5b88.png" width="80%"><br>
 
 > 내가 직접 생성한 리포지토리<br>
 
-<img src="https://user-images.githubusercontent.com/62331803/101879595-ec63c880-3bd4-11eb-8fcc-2da60266e7a3.png" width="50%"><br>
+<img src="https://user-images.githubusercontent.com/62331803/101879595-ec63c880-3bd4-11eb-8fcc-2da60266e7a3.png" width="80%"><br>
 <br>
 
 문제를 차차 찾아보기로 하고... 일단 콘솔에 출력하는 프로그램 형태로 짰다!<br>
