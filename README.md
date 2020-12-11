@@ -15,7 +15,7 @@
 
 > 다른 계정에서 fork한 리포지토리<br>
 
-<img src="https://user-images.githubusercontent.com/62331803/101879752-2339de80-3bd5-11eb-9343-ca4b88ed5b88.png" width="80%"><br>
+<img src="https://user-images.githubusercontent.com/62331803/101879752-2339de80-3bd5-11eb-9343-ca4b88ed5b88.png" width="70%"><br>
 
 > 내가 직접 생성한 리포지토리<br>
 
@@ -133,8 +133,7 @@
 
 ### 1. GitHub 자바 라이브러리
 
-
-![image](https://user-images.githubusercontent.com/62331803/101235118-ed928280-3708-11eb-948c-8d15a1ad093f.png)
+<img src="https://user-images.githubusercontent.com/62331803/101235118-ed928280-3708-11eb-948c-8d15a1ad093f.png" width="60%">
 <br>
 
 **우선 [GitHub 자바 라이브러리](https://github-api.kohsuke.org/)를 알아보았다.** <br>
@@ -157,8 +156,7 @@
 
 > Dependency Information 메뉴에서 pom.xml에 삽입할 태그 내용을 복사한다<br>
 
-
-![image](https://user-images.githubusercontent.com/62331803/101136173-4520e780-3650-11eb-9684-80e21aa3eb02.png)
+<img src="https://user-images.githubusercontent.com/62331803/101136173-4520e780-3650-11eb-9684-80e21aa3eb02.png" width="70%">
 <br>
 
 > 내가 만든 maven 프로젝트의 pom.xml에 붙여넣는다<br>
