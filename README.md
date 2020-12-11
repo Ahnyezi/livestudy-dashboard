@@ -549,7 +549,7 @@ import livestudy.mission4.ghcon.GHConnect;
 
 public class Dao {
 	private Logger LOG = Logger.getGlobal(); 
-	private static GitHub github;
+	private GitHub github;
 	private GHRepository repo;
 	private Map<String, Integer> participants; // userid와 참여횟수
 	private int total; 						   // 이슈 총 개수
